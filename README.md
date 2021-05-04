@@ -36,4 +36,18 @@ Gold:
 
 
 
-Sources: flip-card https://www.youtube.com/watch?v=Lc6wyl1KdOc
+Sources: 
+Make a flip-card: https://www.youtube.com/watch?v=Lc6wyl1KdOc
+locking grid to flip: https://marina-ferreira.github.io/tutorials/js/memory-game/
+
+Code: Conditional (ternary) operator condition ? expression/function if true : expression/function if false */
+    Example:
+    if (firstCard.dataset.cardcolor === secondCard. dataset.cardcolor){
+    disableCards();
+    return;
+    }
+    unflipCards()}
+
+    Can be rewritten into these 2 lines:
+    let isMatch = firstCard.dataset.cardcolor === secondCard.dataset.cardcolor;
+    isMatch ? disableCards() : unflipCards();

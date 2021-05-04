@@ -99,27 +99,11 @@ nav button {
     /* border: black 8px; */
     border-radius: 8px;
 }
-/* .easyMode {
-    width: 900px;
-    height: auto;
-    background-color: darkslateblue;
-    border: 5px dashed darkolivegreen;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-} */
-
-/* .playingTable.flip . { */
-/* .playingTable:hover  */
 
 .flipCard.flip {
     transform: rotateY(-180deg);
     /* transform: rotateY(540deg); */
 }
-
-/* flipCard:active {
-    transform: rotateY(-180deg);
-} */
 
 .flipCard {
     perspective: 1000px;
@@ -154,7 +138,6 @@ nav button {
     transform: rotateY(180deg);
     color: black;
     font-size: 20px;
-    /* transform: rotateY(90deg); */
 }
 .pink {
     background-color: hotpink;
@@ -169,14 +152,14 @@ nav button {
     background-color: yellow;
 }
 .green {
-    background-color: green;
+    background-color: lightgreen;
 }
-.light-blue {
-    background-color: cornflowerblue;
+.teal {
+    background-color: teal;
 }
 .blue {
-    background-color: blue;
+    background-color: cornflowerblue;
 }
 .purple {
-    background-color: purple;
+    background-color: rgb(118, 28, 192);
 }
