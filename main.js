@@ -10,6 +10,10 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockTable = false;
 
+
+
+
+
 function flipCard() {
     // this.classList.toggle("flip"); 
     if (lockTable) return;
@@ -28,10 +32,10 @@ function checkforMatch() {
     let isMatch = firstCard.dataset.cardcolor === secondCard.dataset.cardcolor;
     isMatch ? disableCards() : unflipCards();
     // if (firstCard.dataset.cardcolor === secondCard.dataset.cardcolor){
-    //     disableCards();
-    //     return;
-    // }
-    // unflipCards()
+        //     disableCards();
+        //     return;
+        // }
+        // unflipCards()
 }
 
 function disableCards() {
@@ -53,5 +57,12 @@ function resetTable() {
     [hasFlippedCard, lockTable] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
+
+(function shuffle() {
+    eachCard.forEach(card => {
+        let cardShuffle = Math.floor(Math.random()*eachCard.length); 
+        card.style.order = cardShuffle;
+    });
+})();
 
 eachCard.forEach(card => card.addEventListener("click", flipCard));
