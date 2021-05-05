@@ -14,131 +14,204 @@
         </header>
         <section>
             <nav>
+                <div id="sound">
+                    <h4>SOUND</h4>
+                    <button onclick="return false" class="soundBtn">ON</button>
+                </div>
+                <div id="newGame">
+                    <h4>GAME</h4>
+                    <button onclick="return false" class="newGameBtn">NEW GAME</button>
+                </div>
                 <div id="mode">
                     <h4>MODE</h4>
-                    <button>EASY</button>
-                    <button>MEDIUM</button>
-                    <button>HARD</button>
+                    <button id="easy">EASY</button>
+                    <button id="medium">MEDIUM</button>
+                    <button id="hard">HARD</button>
                 </div>
                 <div id="theme">
                     <h4>THEME</h4>
-                    <button>COLORS</button>
-                    <button>NUMBERS</button>
-                    <button>SPORTS</button> 
+                    <button class="colors button">COLORS</button>
+                    <button class="dinos button">DINOSAUR</button>
+                    <button class="sports button">SPORTS</button> 
                 </div>
             </nav>
             <section id="container">
-                <div class="playingTable flip">
-                    <div class="flipCard" data-cardcolor="yellow">
+                <div class="playingTable">
+                    <div class="flipCard" data-cardset="1">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard yellow">YELLOW
+                            <img class="dinos" src="images/dinosaur/dino1.jpg" alt="Dinosaur1">
+                            <img class="sports" src="images/sports/badmitten.jpg" alt="Badmitten">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="yellow">
+                    <div class="flipCard" data-cardset="1">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">                            
                         </div>
                         <div class="faceOfCard yellow">YELLOW
+                            <img class="dinos" src="images/dinosaur/dino1.jpg" alt="Dinosaur1">
+                            <img class="sports" src="images/sports/badmitten.jpg" alt="Badmitten">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="red">
+                    <div class="flipCard" data-cardset="2">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard red">RED
+                            <img class="dinos" src="images/dinosaur/dino2.jpg" alt="Dinosaur2">
+                            <img class="sports" src="images/sports/bikes.jpg" alt="Bikes">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="red">
+                    <div class="flipCard" data-cardset="2">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard red">RED
+                            <img class="dinos" src="images/dinosaur/dino2.jpg" alt="Dinosaur2">
+                            <img class="sports" src="images/sports/bikes.jpg" alt="Bikes">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="blue">
+                    <div class="flipCard" data-cardset="3">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard blue">BLUE
+                            <img class="dinos" src="images/dinosaur/dino3.jpg" alt="Dinosaur3">
+                            <img class="sports" src="images/sports/bowling.jpg" alt="Bowling">
+
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="blue">
+                    <div class="flipCard" data-cardset="3">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard blue">BLUE
+                            <img class="dinos" src="images/dinosaur/dino3.jpg" alt="Dinosaur3">
+                            <img class="sports" src="images/sports/bowling.jpg" alt="Bowling">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="green">
+                    <div class="flipCard" data-cardset="4">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard green">GREEN
+                            <img class="dinos" src="images/dinosaur/dino4.jpg" alt="Dinosaur4">
+                            <img class="sports" src="images/sports/boxing.jpg" alt="Boxing">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="green">
+                    <div class="flipCard" data-cardset="4">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard green">GREEN
+                            <img class="dinos" src="images/dinosaur/dino4.jpg" alt="Dinosaur4">
+                            <img class="sports" src="images/sports/boxing.jpg" alt="Boxing">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="orange">
+                    <div class="flipCard" data-cardset="5">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard orange">ORANGE
+                            <img class="dinos" src="images/dinosaur/dino5.jpg" alt="Dinosaur5">
+                            <img class="sports" src="images/sports/football.jpg" alt="Football">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="orange">
+                    <div class="flipCard" data-cardset="5">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard orange">ORANGE
+                            <img class="dinos" src="images/dinosaur/dino5.jpg" alt="Dinosaur5">
+                            <img class="sports" src="images/sports/football.jpg" alt="Football">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="purple">
+                    <div class="flipCard" data-cardset="6">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard purple">PURPLE
+                            <img class="dinos" src="images/dinosaur/dino6.jpg" alt="Dinosaur6">
+                            <img class="sports" src="images/sports/golf2.jpg" alt="Golf">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="purple">
+                    <div class="flipCard" data-cardset="6">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard purple">PURPLE
+                            <img class="dinos" src="images/dinosaur/dino6.jpg" alt="Dinosaur6">
+                            <img class="sports" src="images/sports/golf2.jpg" alt="Golf">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="teal">
+                    <div class="flipCard" data-cardset="7">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
-                        <div class="faceOfCard teal">CYAN
+                        <div class="faceOfCard teal">TEAL
+                            <img class="dinos" src="images/dinosaur/dino7.jpg" alt="Dinosaur7">
+                            <img class="sports" src="images/sports/horsepolo.jpg" alt="Horse-Polo">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="teal">
+                    <div class="flipCard" data-cardset="7">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
-                        <div class="faceOfCard teal">CYAN
+                        <div class="faceOfCard teal">TEAL
+                            <img class="dinos" src="images/dinosaur/dino7.jpg" alt="Dinosaur7">
+                            <img class="sports" src="images/sports/horsepolo.jpg" alt="Horse-Polo">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="pink">
+                    <div class="flipCard" data-cardset="8">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard pink">PINK
+                            <img class="dinos" src="images/dinosaur/dino8.jpg" alt="Dinosaur8">
+                            <img class="sports" src="images/sports/karate.jpg" alt="Karate">
                         </div>
                     </div>
-                    <div class="flipCard" data-cardcolor="pink">
+                    <div class="flipCard" data-cardset="8">
                         <div class="backOfCard">
-                            <img src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="colors" src="images/crayon-stamp.jpg" alt="Crayon Box">
+                            <img class="dinos" src="images/dino-cover3.jpeg" alt="Dinosaur">
+                            <img class="sports" src="images/sportsCover.jpg" alt="Sports-Equipment">
                         </div>
                         <div class="faceOfCard pink">PINK
+                            <img class="dinos" src="images/dinosaur/dino8.jpg" alt="Dinosaur8">
+                            <img class="sports" src="images/sports/karate.jpg" alt="Karate">
                         </div>
                     </div>
                 </div>
@@ -146,11 +219,11 @@
             <aside>
                 <div class="sidebar">
                     <h4>Attempted Matches</h4>
-                    <p>#</p>
+                    <p id="attempts">0</p>
                 </div>
                 <div class="sidebar">
                     <h4>Paired Matches</h4>
-                    <p>#</p>
+                    <p id="matches">0</p>
                 </div>
             </aside>
         </section>

@@ -38,9 +38,13 @@ Gold:
 
 Sources: 
 Make a flip-card: https://www.youtube.com/watch?v=Lc6wyl1KdOc
+
 locking grid to flip: https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae / https://marina-ferreira.github.io/tutorials/js/memory-game/
 
-Code: Conditional (ternary) operator condition ? expression/function if true : expression/function if false */
+Adding Audio: https://www.codegrepper.com/code-examples/javascript/how+to+play+sounds+vanilla+js
+
+Conditional (ternary) operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+  condition ? expression/function if true : expression/function if false */
     Example:
     if (firstCard.dataset.cardcolor === secondCard. dataset.cardcolor){
     disableCards();

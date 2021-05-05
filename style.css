@@ -27,10 +27,6 @@ header {
     /* position: fixed;
     width: 100vw; */
 }
-/* footer {
-    display: flex;
-    flex-direction: row;
-} */
 footer p {
     flex-grow: 0;
     height: 5vh;
@@ -48,23 +44,23 @@ nav, aside {
     flex-wrap: nowrap;
     flex-direction: column;
 }
-#mode, #theme, .sidebar  {
+#mode, #theme, .sidebar, #sound {
     margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-h4 {
+nav h4 {
     font-weight: bold;
     width: 160px;
-    margin: 0px 80px;
-    border-bottom: black 1px solid;
 }
+
 aside p {
     font-weight: bold;
     width: 120px;
-    margin: 20px 100px;   
+    justify-content: center;
+    /* margin: 20px 100px;    */
 }
 
 nav button {
@@ -72,11 +68,25 @@ nav button {
     color: bisque;
     font-weight: bold;
     width: 120px;
-    margin: 20px 100px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+button:hover {
+    border: black 5px solid;
+
+}
+.soundBtn {
+    background-color: darkolivegreen;
+}
+.soundBtn.off {
+    background-color: grey;
 }
 
 #container {
-    justify-content: space-between;
+    justify-content: center;
     /* align-items: center; */
     /* margin: 0 3px; */
     width: 80vw;
@@ -85,6 +95,7 @@ nav button {
     
 }
 .playingTable {
+    cursor: pointer;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -94,8 +105,8 @@ nav button {
     height: 80%;
     width: 80%;
     padding-left: 3%;
-    background-repeat: repeat;
-    background-image: url(Images/green-felt-square.jpg);
+    /* background-position: contain; */
+    background-image: url(Images/green.jpg);
     /* border: black 8px; */
     border-radius: 8px;
 }
@@ -113,6 +124,20 @@ nav button {
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
+    /* background-color: bisque; */
+    border-radius: 10px;
+}
+.flipCard:hover {
+    /* width: 22%;
+    height: 22%; */
+    border: bisque 5px solid;
+    border-radius: 10px;
+}
+.flipCard.flip:hover {
+    width: 21%;
+    height: 21%;
+    border: none;
+    border-radius: none;
 }
 
 .backOfCard, .faceOfCard {
@@ -129,10 +154,12 @@ nav button {
 .backOfCard {
     background-color: black;
 }
-.backOfCard img {
+.backOfCard img, .faceOfCard img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    display: block;
+    position: absolute;
 }
 .faceOfCard {
     transform: rotateY(180deg);
@@ -162,4 +189,18 @@ nav button {
 }
 .purple {
     background-color: rgb(118, 28, 192);
+}
+img.dinos, img.sports {
+    display: none;
+    position: absolute;
+}
+img.hidden {
+    display: none;
+}
+img.display {
+    display: block;
+}
+
+#newGame, #mode {
+    display: none;
 }
