@@ -45,8 +45,8 @@ nav, aside {
     flex-direction: column;
 }
 #mode, #theme, .sidebar, #sound, #newGame {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

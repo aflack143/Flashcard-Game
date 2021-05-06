@@ -1,8 +1,4 @@
 const playingTable = document.querySelector(".playingTable");
-
-// playingTable.addEventListener("click", function() {
-    //     playingTable.classList.toggle("flip");
-    // });
 const eachCard = document.querySelectorAll(".flipCard");
 const pairCards = document.querySelectorAll(".matchedSet");
 let hasFlippedCard = false;
@@ -33,6 +29,51 @@ const hardButton = document.querySelector("#hard");
 
 /* Game Mode */
 
+
+// easyButton.addEventListener("click", () => {
+//     reset();
+//     cardShuffle();
+//     easyMode();
+//     easyOthersMode();
+// });
+
+easyButton.addEventListener("click", () => {
+    for (let i=0; i<16; i++) {
+        // eachCard.forEach(indCard => {
+            eachCard[i].classList.add("display");
+            eachCard[i].classList.add("easy");
+            eachCard[i].classList.remove("hidden");
+        }
+    for (let i=16; i < eachCard.length; i++) {
+        // eachCard.forEach(indCard => {
+            eachCard[i].classList.remove("display");
+            eachCard[i].classList.remove("hard");
+            eachCard[i].classList.remove("medium");
+            eachCard[i].classList.add("hidden");
+        }
+    reset();
+    cardShuffle();
+});
+
+mediumButton.addEventListener("click", () => {
+    for (let i=0; i<30; i++) {
+        // eachCard.forEach(indCard => {
+            eachCard[i].classList.add("display");
+            eachCard[i].classList.add("easy");
+            eachCard[i].classList.remove("hidden");
+        }
+    for (let i=30; i < eachCard.length; i++) {
+        // eachCard.forEach(indCard => {
+            eachCard[i].classList.remove("display");
+            eachCard[i].classList.remove("hard");
+            eachCard[i].classList.remove("medium");
+            eachCard[i].classList.add("hidden");
+        }
+    reset();
+    cardShuffle();
+});
+
+
 hardButton.addEventListener("click", () => {
     eachCard.forEach(indCard => {
         indCard.classList.add("display");
@@ -41,61 +82,37 @@ hardButton.addEventListener("click", () => {
         indCard.classList.remove("easy");
         indCard.classList.remove("medium");
     });
-    // shuffle();
+    reset();
+    cardShuffle();
 });
-/* My mind is trying to randomize the 48 divs (24 datasets)
-then pull the 16 divs / 8 dataset || 30divs / 15 dataset || 48div / 24dataset - making sure there are 2 of each dataset and adding ".dispaly" class to those
-then, any div not selected will need to have ".hidden" class added to them to hid from view */
-
-// (function randCardShuffle() {                
-//     pairCards.forEach(card => {                   
-//         let randShuffle = Math.floor(Math.random()*pairCards.length); 
-//         card.style.order = randShuffle;
-//     });
-// })();
 
 
-/* ^ End of Game Mode Selection ^ */
-
-// function resetTable() {
-//     attemptedMatches.innerHTML = 0;
-//     pairedMatches.innerHTML = 0;
-//     hasFlippedCard = false;
-//     firstCard, secondCard;
-//     lockTable = false;  
-//     eachCard.forEach(card => {
-//         card.classList.remove("flip");
-//         card.classList.add("reset");
-//         card.addEventListener("click", flipCard);
-//         card.style.border = "none";
-//     });
-// }
 newGameBtn.addEventListener("click", () => {
-    let reset() => {
-    // resetTable();   
-    // eachCard.forEach(card => {                   
-    //     let cardShuffle = Math.floor(Math.random()*eachCard.length); 
-    //     card.style.order = cardShuffle;
-    // });
-        eachCard.forEach(card => {
-            card.classList.remove("flip");
-            card.classList.add("reset");
-            card.addEventListener("click", flipCard);
-            card.style.border = "none";
-        });
-        attemptedMatches.innerHTML = 0;
-        pairedMatches.innerHTML = 0;
-        hasFlippedCard = false;
-        firstCard, secondCard;
-        lockTable = false;
-    };
+    reset();
+    cardShuffle();
+});
+
+function reset() {
+    attemptedMatches.innerHTML = 0;
+    pairedMatches.innerHTML = 0;
+    hasFlippedCard = false;
+    firstCard, secondCard;
+    lockTable = false;
+    eachCard.forEach(card => {
+        card.classList.remove("flip");
+        card.classList.add("reset");
+        card.addEventListener("click", flipCard);
+        card.style.border = "none";
+    });
+}
+
+function cardShuffle() {
     eachCard.forEach(card => {                   
         let cardShuffle = Math.floor(Math.random()*eachCard.length); 
         card.style.order = cardShuffle;
-        card.classList.remove("reset");
     });
-});
-
+}
+/* ^ End of Game Mode Selection ^ */
 
 /* Sound Functions */
 soundBtn.addEventListener("click", () => {
@@ -107,16 +124,17 @@ soundBtn.addEventListener("click", () => {
         soundBtn.innerHTML = "ON";
     }
 })
+let sportImg1 = document.querySelector("img.sports.display")
 
 function matchedSound() {            
     if (!soundBtn.classList.contains("off")) {
         // if (!sportsImg.classList.contains("display")) {
-        winSportsTone.play(); 
-    // } else {
-    //     winSportsTone.play();
-    }   
-}        
-            
+        // winTone.play(); 
+        // } else {
+        winSportsTone.play();
+    // }   
+}} 
+  
 function cardFlipSound() {     
     if (!soundBtn.classList.contains("off")) {
         flipTone.play();
@@ -132,7 +150,10 @@ function notMatchedSound() {
 
 
 function flipCard() {
-    // this.classList.toggle("flip"); 
+    // this.classList.toggle("flip");
+    eachCard.forEach(card => {
+        card.classList.remove("reset");
+    }); 
     cardFlipSound();
     if (lockTable) return;
     if (this === firstCard) return;
