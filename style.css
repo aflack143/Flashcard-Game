@@ -129,7 +129,14 @@ button:hover {
     transition: transform 1s;
     transform-style: preserve-3d;
     border-radius: 10px;
+    border: none;
 }
+
+.reset {
+    transition: transform 0s;;
+
+}
+
 
 
 .easy {

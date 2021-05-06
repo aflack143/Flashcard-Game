@@ -15,7 +15,7 @@ const flipDinosTone = new Audio('Sound/dinoGrowl.wav');
 const flipTone = new Audio('Sound/shake.wav');
 const soundBtn = document.querySelector(".soundBtn")
 const soundOff = document.querySelector(".off")
-const newGameBtn = document.querySelector("newGameBtn");
+const newGameBtn = document.querySelector(".newGameBtn");
 const colorsButton = document.querySelector(".button.colors");
 const dinosButton = document.querySelector(".button.dinos");
 const sportsButton = document.querySelector(".button.sports");
@@ -57,14 +57,44 @@ then, any div not selected will need to have ".hidden" class added to them to hi
 
 /* ^ End of Game Mode Selection ^ */
 
-// newGameBtn.addEventListener("click", () => {
+// function resetTable() {
+//     attemptedMatches.innerHTML = 0;
+//     pairedMatches.innerHTML = 0;
+//     hasFlippedCard = false;
+//     firstCard, secondCard;
+//     lockTable = false;  
 //     eachCard.forEach(card => {
 //         card.classList.remove("flip");
-//     })
-//     // let attemptedMatches.innerHTML = 0;
-//     // let pairedMatches.innerHTML = 0;
-//     shuffle();
-// });
+//         card.classList.add("reset");
+//         card.addEventListener("click", flipCard);
+//         card.style.border = "none";
+//     });
+// }
+newGameBtn.addEventListener("click", () => {
+    let reset() => {
+    // resetTable();   
+    // eachCard.forEach(card => {                   
+    //     let cardShuffle = Math.floor(Math.random()*eachCard.length); 
+    //     card.style.order = cardShuffle;
+    // });
+        eachCard.forEach(card => {
+            card.classList.remove("flip");
+            card.classList.add("reset");
+            card.addEventListener("click", flipCard);
+            card.style.border = "none";
+        });
+        attemptedMatches.innerHTML = 0;
+        pairedMatches.innerHTML = 0;
+        hasFlippedCard = false;
+        firstCard, secondCard;
+        lockTable = false;
+    };
+    eachCard.forEach(card => {                   
+        let cardShuffle = Math.floor(Math.random()*eachCard.length); 
+        card.style.order = cardShuffle;
+        card.classList.remove("reset");
+    });
+});
 
 
 /* Sound Functions */
