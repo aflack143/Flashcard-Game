@@ -93,15 +93,16 @@ button:hover {
 .playingTable {
     cursor: pointer;
     position: absolute;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     height: 80%;
     width: 80%;
-    padding-left: 3%;
+    padding: 1%;
     background-image: url(images/green.jpg);
+    background-position: cover;
     border-radius: 8px;
 }
 
@@ -109,17 +110,6 @@ button:hover {
     transform: rotateY(-180deg);
     /* transform: rotateY(540deg); */
 }
-
-/* .matchedSet {
-    width: 21%;
-    height: 21%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: space-evenly;
-} */
 
 .flipCard {
     perspective: 1000px;
@@ -142,6 +132,13 @@ button:hover {
 .easy {
     width: 21%;
     height: 21%;
+    justify-content: space-evenly;
+}
+
+.medium {
+    width: 18%;
+    height: 15%;
+    justify-content: stretch;
 }
 
 .hard {
@@ -151,12 +148,6 @@ button:hover {
 
 }
 
-/* .matchedset.hard {
-    width: 16%;
-    height: 12%;
-    position: absolute;
-    border-radius: 10px;
-} */
 .flipCard:hover {
     border: bisque 5px solid;
     border-radius: 10px;
@@ -167,6 +158,10 @@ button:hover {
     height: 21%;
     border: none;
     border-radius: none;
+}
+.flipCard.medium.flip:hover {
+    width: 18%;
+    height: 15%;
 }
 .flipCard.hard.flip:hover {
     width: 14%;

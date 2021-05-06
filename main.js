@@ -5,10 +5,14 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockTable = false;
 const winTone = new Audio('Sound/chime.mp3');
+const winDinosTone = new Audio('Sound/dinoRoaring.wav');
 const winSportsTone = new Audio('Sound/golf-clap2.wav');
 const tryAgainTone = new Audio('Sound/shake2.wav');
-const flipDinosTone = new Audio('Sound/dinoGrowl.wav');
+const tryAgainDinosTone = new Audio('Sound/dinoTric.wav');
+const tryAgainSportsTone = new Audio('Sound/ding2c.wav');
 const flipTone = new Audio('Sound/shake.wav');
+const flipDinosTone = new Audio('Sound/dinoGrowl.wav');
+const flipSportsTone = new Audio('Sound/ding.wav');
 const soundBtn = document.querySelector(".soundBtn")
 const soundOff = document.querySelector(".off")
 const newGameBtn = document.querySelector(".newGameBtn");
@@ -43,12 +47,12 @@ easyButton.addEventListener("click", () => {
             eachCard[i].classList.add("display");
             eachCard[i].classList.add("easy");
             eachCard[i].classList.remove("hidden");
+            eachCard[i].classList.remove("hard");
+            eachCard[i].classList.remove("medium");
         }
     for (let i=16; i < eachCard.length; i++) {
         // eachCard.forEach(indCard => {
             eachCard[i].classList.remove("display");
-            eachCard[i].classList.remove("hard");
-            eachCard[i].classList.remove("medium");
             eachCard[i].classList.add("hidden");
         }
     reset();
@@ -59,14 +63,14 @@ mediumButton.addEventListener("click", () => {
     for (let i=0; i<30; i++) {
         // eachCard.forEach(indCard => {
             eachCard[i].classList.add("display");
-            eachCard[i].classList.add("easy");
+            eachCard[i].classList.add("medium");
             eachCard[i].classList.remove("hidden");
+            eachCard[i].classList.remove("hard");
+            eachCard[i].classList.remove("easy");
         }
     for (let i=30; i < eachCard.length; i++) {
         // eachCard.forEach(indCard => {
             eachCard[i].classList.remove("display");
-            eachCard[i].classList.remove("hard");
-            eachCard[i].classList.remove("medium");
             eachCard[i].classList.add("hidden");
         }
     reset();
@@ -95,6 +99,8 @@ newGameBtn.addEventListener("click", () => {
 function reset() {
     attemptedMatches.innerHTML = 0;
     pairedMatches.innerHTML = 0;
+    matchAttempts = 1;
+    matchedPairs = 1;
     hasFlippedCard = false;
     firstCard, secondCard;
     lockTable = false;
@@ -125,25 +131,41 @@ soundBtn.addEventListener("click", () => {
     }
 })
 let sportImg1 = document.querySelector("img.sports.display")
+let theme = "colors";
 
-function matchedSound() {            
-    if (!soundBtn.classList.contains("off")) {
-        // if (!sportsImg.classList.contains("display")) {
-        // winTone.play(); 
-        // } else {
+function matchedSound() {
+    if (soundBtn.classList.contains("off")) {
+        return;
+    } else if (theme === "sports") {
         winSportsTone.play();
-    // }   
-}} 
+    }else if (theme === "dinos") {
+        winDinosTone.play();
+    } else {
+        winTone.play();
+    }
+}
   
 function cardFlipSound() {     
-    if (!soundBtn.classList.contains("off")) {
+    if (soundBtn.classList.contains("off")) {
+        return;
+    } else if (theme === "sports") {
+        flipSportsTone.play();
+    }else if (theme === "dinos") {
+        flipDinosTone.play();
+    } else {
         flipTone.play();
     }
 }
             
 function notMatchedSound() {
-    if (!soundBtn.classList.contains("off")) {
-        flipDinosTone.play();
+    if (soundBtn.classList.contains("off")) {
+        return;
+    } else if (theme === "sports") {
+        tryAgainSportsTone.play();
+    }else if (theme === "dinos") {
+        tryAgainDinosTone.play();
+    } else {
+        tryAgainTone.play();
     }
 }
 /* ^ End of Sound Functions ^ */
@@ -228,7 +250,8 @@ eachCard.forEach(card => card.addEventListener("click", (flipCard)));
 
 
 /* THEME Buttons */
-dinosButton.addEventListener("click", () => {              
+dinosButton.addEventListener("click", () => {  
+    theme = "dinos";            
     dinosImg.forEach(dinoBack => {
         dinoBack.classList.add("display");
     });
@@ -243,6 +266,7 @@ dinosButton.addEventListener("click", () => {
 });
 
 colorsButton.addEventListener("click", () => {
+    theme = "colors";
     colorsImg.forEach(colorBack => {
         colorBack.classList.add("display")
     });
@@ -257,6 +281,7 @@ colorsButton.addEventListener("click", () => {
 });
 
 sportsButton.addEventListener("click", () => {
+    theme = "sports";
     sportsImg.forEach(sportsBack => {
         sportsBack.classList.add("display");
     });
