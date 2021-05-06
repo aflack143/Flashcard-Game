@@ -7,9 +7,9 @@ let lockTable = false;
 const winTone = new Audio('Sound/chime.mp3');
 const winDinosTone = new Audio('Sound/dinoRoaring.wav');
 const winSportsTone = new Audio('Sound/golf-clap2.wav');
-const tryAgainTone = new Audio('Sound/shake2.wav');
+const tryAgainTone = new Audio('Sound/jingle.wav');
 const tryAgainDinosTone = new Audio('Sound/dinoTric.wav');
-const tryAgainSportsTone = new Audio('Sound/ding2c.wav');
+const tryAgainSportsTone = new Audio('Sound/whistle.wav');
 const flipTone = new Audio('Sound/shake.wav');
 const flipDinosTone = new Audio('Sound/dinoGrowl.wav');
 const flipSportsTone = new Audio('Sound/ding.wav');
@@ -32,14 +32,6 @@ const mediumButton = document.querySelector("#medium");
 const hardButton = document.querySelector("#hard");
 
 /* Game Mode */
-
-
-// easyButton.addEventListener("click", () => {
-//     reset();
-//     cardShuffle();
-//     easyMode();
-//     easyOthersMode();
-// });
 
 easyButton.addEventListener("click", () => {
     for (let i=0; i<16; i++) {
@@ -170,9 +162,8 @@ function notMatchedSound() {
 }
 /* ^ End of Sound Functions ^ */
 
-
+/* Game Play functions */
 function flipCard() {
-    // this.classList.toggle("flip");
     eachCard.forEach(card => {
         card.classList.remove("reset");
     }); 
@@ -215,15 +206,12 @@ function disableCards() {
         
 function unflipCards() {
     lockTable = true;
-    notMatchedSound();
-            // if (!soundBtn.classList.contains("off")) {
-                //     flipDinosTone.play();
-                // }
     firstCard.style.border = "thick solid red";
     firstCard.style.borderRadius = "15px";
     secondCard.style.border = "thick solid red";
     secondCard.style.borderRadius = "15px";
     setTimeout(() => {
+        notMatchedSound();
         firstCard.style.border = "";
         secondCard.style.border = "";
         firstCard.classList.remove("flip");
@@ -293,5 +281,46 @@ sportsButton.addEventListener("click", () => {
         dinoBack.classList.add("hidden");
         dinoBack.classList.remove("display");
     });
+});
+
+const greenFeltButton = document.querySelector(".greenFelt");
+const blueFeltButton = document.querySelector(".blueFelt");
+const galaxyButton = document.querySelector(".galaxy");
+const blueSmokeButton = document.querySelector(".blueSmoke");
+const brickButton = document.querySelector(".brick");
+
+greenFeltButton.addEventListener("click", () => {
+    playingTable.classList.remove("blueFelt");
+    playingTable.classList.remove("galaxy");
+    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("brick");
+});
+
+blueFeltButton.addEventListener("click", () => {
+    playingTable.classList.add("blueFelt");
+    playingTable.classList.remove("galaxy");
+    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("brick");
+});
+
+galaxyButton.addEventListener("click", () => {
+    playingTable.classList.remove("blueFelt");
+    playingTable.classList.add("galaxy");
+    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("brick");
+});
+
+blueSmokeButton.addEventListener("click", () => {
+    playingTable.classList.remove("blueFelt");
+    playingTable.classList.remove("galaxy");
+    playingTable.classList.add("blueSmoke");
+    playingTable.classList.remove("brick");
+});
+
+brickButton.addEventListener("click", () => {
+    playingTable.classList.remove("blueFelt");
+    playingTable.classList.remove("galaxy");
+    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.add("brick");
 });
 /* End of THEME Buttons ^ */

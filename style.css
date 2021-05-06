@@ -1,5 +1,4 @@
 * {
-    /* border: 1px solid hotpink; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,48 +26,82 @@ header {
     /* position: fixed;
     width: 100vw; */
 }
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.results {
+    width: 500px;
+    height: 7vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.results h4 {
+    margin-top: 2px;
+    height: 50%;
+    border-bottom: darkolivegreen solid 2px;
+    width: 200px;
+}
+.results p {
+    width: 200px;
+    text-align: center;
+    height: 40%;
+}
+
 footer p {
     flex-grow: 0;
-    height: 5vh;
+    height: 3vh;
     justify-content: center;
     align-self: flex-end;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-nav, aside {
+aside {
     flex: 2 100px;
     width: 250px;
     min-width: 100px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
-#mode, #theme, .sidebar, #sound, #newGame {
+/* #mode, #theme, #sound, #newGame {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+aside div {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-nav h4 {
+h4 {
     font-weight: bold;
     width: 160px;
 }
 
-aside p {
-    font-weight: bold;
-    width: 120px;
-    justify-content: center;
-    /* margin: 20px 100px;    */
-}
-
-nav button {
+aside button {
     background-color: indianred;
     color: bisque;
     font-weight: bold;
     width: 120px;
-    height: 40px;
+    height: 25px;
     margin-top: 10px;
     border-radius: 5px;
     cursor:pointer;
@@ -88,7 +121,7 @@ button:hover {
 #container {
     justify-content: center;
     width: 80vw;
-    height: 85vh;  
+    height: 80vh;  
 }
 .playingTable {
     cursor: pointer;
@@ -102,7 +135,9 @@ button:hover {
     width: 80%;
     padding: 1%;
     background-image: url(images/green.jpg);
-    background-position: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 8px;
 }
 
@@ -124,10 +159,7 @@ button:hover {
 
 .reset {
     transition: transform 0s;;
-
 }
-
-
 
 .easy {
     width: 21%;
@@ -193,6 +225,8 @@ button:hover {
     transform: rotateY(180deg);
     color: black;
     font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
 }
 .pink {
     background-color: hotpink;
@@ -281,14 +315,18 @@ img.display {
     display: block;
 }
 
-/* .matchedSet.hidden {
-    display: none;
+.playingTable.blueFelt {
+    background-image: url(images/blue-felt.jpg);
 }
-.matchedSet.display {
-    display: block;
-} */
 
-/* #newGame,  */
-/* #mode {
-    display: none;
-} */
+.playingTable.blueSmoke {
+    background-image: url(images/blue-smoke.jpg);
+}
+
+.playingTable.galaxy {
+    background-image: url(images/galaxy.jpg);
+}
+
+.playingTable.brick {
+    background-image: url(images/brickColors.jpg);
+}

@@ -13,7 +13,7 @@
             <h1>FLASHCARDS</h1>
         </header>
         <section>
-            <nav>
+            <aside>
                 <div id="sound">
                     <h4>SOUND</h4>
                     <button onclick="return false" class="soundBtn">ON</button>
@@ -28,13 +28,13 @@
                     <button id="medium">MEDIUM</button>
                     <button id="hard">HARD</button>
                 </div>
-                <div id="theme">
+                <!-- <div id="theme">
                     <h4>THEME</h4>
                     <button class="colors button">COLORS</button>
                     <button class="dinos button">DINOSAUR</button>
                     <button class="sports button">SPORTS</button> 
-                </div>
-            </nav>
+                </div> -->
+            </aside>
             <section id="container">
                 <div class="playingTable">
                     <!-- <div class="matchedSet set1"> -->
@@ -618,17 +618,33 @@
                 </div>
             </section>
             <aside>
-                <div class="sidebar">
-                    <h4>Attempted Matches</h4>
-                    <p id="attempts">0</p>
+                <div id="theme">
+                    <h4>CARD THEME</h4>
+                    <button class="colors button">COLORS</button>
+                    <button class="dinos button">DINOSAUR</button>
+                    <button class="sports button">SPORTS</button> 
                 </div>
-                <div class="sidebar">
-                    <h4>Paired Matches</h4>
-                    <p id="matches">0</p>
+                <div id="tableColor">
+                    <h4>TABLE TABLE</h4>
+                    <button class="greenFelt button">GREEN FELT</button>
+                    <button class="blueFelt button">BLUE FELT</button>
+                    <button class="galaxy button">GALAXY</button> 
+                    <button class="brick button">BRICK</button> 
+                    <button class="blueSmoke button">BLUE SMOKE</button> 
                 </div>
             </aside>
         </section>
         <footer>
+            <div>
+                <div class="results">
+                    <h4>Attempted Matches</h4>
+                    <p id="attempts">0</p>
+                </div>
+                <div class="results">
+                    <h4>Paired Matches</h4>
+                    <p id="matches">0</p>
+                </div>
+            </div>
             <p>Created by <a href="https://Aflack143.github.io">Aflack143</a> - May 2021</p>
         </footer>
         <script src="main.js"></script>
