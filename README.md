@@ -8,8 +8,9 @@ Within this game I will demonstrate the skills I have learned from the **General
 For this game, goal is to match all the cards, flipping over 2 cards at a time.
 
 ## Brief Example:
-Screenshot of the program in use:
-![Game screenshot](https://user-images.githubusercontent.com/80013194/117393174-2ce01d80-aeb9-11eb-94a8-6557e86ccf54.png)
+Screenshot of the program in use:  
+![screenshot of game](https://user-images.githubusercontent.com/80013194/117452734-bd464e80-af09-11eb-9caf-ad16e59f088b.png)
+
   
 ## Features:
 **_Bronze_**:
