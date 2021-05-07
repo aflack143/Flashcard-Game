@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
 }
 body {
@@ -8,6 +8,7 @@ body {
     background-color: bisque;
     text-align: center; 
     font-family: 'Acme', sans-serif;
+    font-size: 20px;
     flex-grow: 2; 
 }
 body section {
@@ -19,12 +20,10 @@ body section {
 }
 header {
     flex: 0 100px;
-    height: 10vh;
+    height: 9vh;
     align-content: flex-start;
     font-size: 32px;
     margin-top: 0;
-    /* position: fixed;
-    width: 100vw; */
 }
 
 footer div {
@@ -33,6 +32,15 @@ footer div {
     flex-wrap: nowrap;
     justify-content: center;
     font-size: 15px;
+}
+
+#left{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#right{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .results {
@@ -59,7 +67,7 @@ footer div {
 
 footer p {
     flex-grow: 0;
-    height: 3vh;
+    height: 2.5vh;
     justify-content: center;
     align-self: flex-end;
     margin-top: 0px;
@@ -76,21 +84,21 @@ aside {
     align-content: center;
     justify-content: center;
 }
-/* #mode, #theme, #sound, #newGame {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
-aside div {
+#mode, #theme, #sound, #newGame, #tableColor {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* aside div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
 h4 {
     font-weight: bold;
     width: 160px;
@@ -329,4 +337,76 @@ img.display {
 
 .playingTable.brick {
     background-image: url(images/brickColors.jpg);
+}
+
+
+@media only screen and (max-width: 750px), (max-height: 550px) {
+body {
+    font-size: 12px;
+}
+h1 {
+    font-size: 20px;
+}
+#container {
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+.playingTable {
+    width: 100%;
+    height: 100%;
+}
+aside {
+    width: 80px;
+    height: 250px;
+    position: relative;
+}
+aside div{
+    width: 80px;
+    flex-wrap: wrap;
+}
+aside p, .button, footer, .faceOfCard {
+    font-size: 10px;
+    /* font-weight: thin; */
+}
+.button {
+    font-weight: bold;
+    width: 80px;
+    height: 25px;
+    margin-top: 5px;
+    color: black;
+    align-content: center;
+    justify-content: center;
+    border-width: 0;
+    border-style: none;
+}
+
+.results h4 {
+    border: none;
+}
+
+#left{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+#right{
+    margin-left: 10px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flipCard:hover {
+    border: black 3px solid
+}
+
+/* .flipCard, .backOfCard, .faceOfCard {
+    border: none;
+} */
+
+.backOfCard img, .faceOfCard img {
+    position: 0px;
+}
+
 }
