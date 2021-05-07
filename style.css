@@ -92,13 +92,6 @@ aside {
     justify-content: center;
 }
 
-/* aside div {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
 h4 {
     font-weight: bold;
     width: 160px;
@@ -193,7 +186,7 @@ button:hover {
     border-radius: 10px;
     position: relative;
 }
-.flipCard.flip:hover {
+.flip:hover {
     width: 21%;
     height: 21%;
     border: none;
@@ -215,7 +208,7 @@ button:hover {
     backface-visibility: hidden;
     display: flex;
     justify-content: space-between;
-    align-items: space-between;
+    align-content: space-between;
     border: black 2px solid;
     border-radius: 10px;
 }
@@ -323,11 +316,11 @@ img.display {
     display: block;
 }
 
-.playingTable.blueFelt {
-    background-image: url(images/blue-felt.jpg);
+.playingTable.wood {
+    background-image: url(images/wood2.png);
 }
 
-.playingTable.blueSmoke {
+.playingTable.smokey {
     background-image: url(images/blue-smoke.jpg);
 }
 
@@ -400,13 +393,10 @@ aside p, .button, footer, .faceOfCard {
 .flipCard:hover {
     border: black 3px solid
 }
-
-/* .flipCard, .backOfCard, .faceOfCard {
-    border: none;
-} */
+/* 
 
 .backOfCard img, .faceOfCard img {
     position: 0px;
-}
+} */
 
 }

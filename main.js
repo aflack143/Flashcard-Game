@@ -283,44 +283,44 @@ sportsButton.addEventListener("click", () => {
     });
 });
 
-const greenFeltButton = document.querySelector(".greenFelt");
-const blueFeltButton = document.querySelector(".blueFelt");
+const standardButton = document.querySelector(".standard");
+const smokeyButton = document.querySelector(".smokey");
 const galaxyButton = document.querySelector(".galaxy");
-const blueSmokeButton = document.querySelector(".blueSmoke");
+const woodButton = document.querySelector(".wood");
 const brickButton = document.querySelector(".brick");
 
-greenFeltButton.addEventListener("click", () => {
-    playingTable.classList.remove("blueFelt");
+standardButton.addEventListener("click", () => {
+    playingTable.classList.remove("smokey");
     playingTable.classList.remove("galaxy");
-    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("wood");
     playingTable.classList.remove("brick");
 });
 
-blueFeltButton.addEventListener("click", () => {
-    playingTable.classList.add("blueFelt");
+smokeyButton.addEventListener("click", () => {
+    playingTable.classList.add("smokey");
     playingTable.classList.remove("galaxy");
-    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("wood");
     playingTable.classList.remove("brick");
 });
 
 galaxyButton.addEventListener("click", () => {
-    playingTable.classList.remove("blueFelt");
+    playingTable.classList.remove("smokey");
     playingTable.classList.add("galaxy");
-    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("wood");
     playingTable.classList.remove("brick");
 });
 
-blueSmokeButton.addEventListener("click", () => {
-    playingTable.classList.remove("blueFelt");
+woodButton.addEventListener("click", () => {
+    playingTable.classList.remove("smokey");
     playingTable.classList.remove("galaxy");
-    playingTable.classList.add("blueSmoke");
+    playingTable.classList.add("wood");
     playingTable.classList.remove("brick");
 });
 
 brickButton.addEventListener("click", () => {
-    playingTable.classList.remove("blueFelt");
+    playingTable.classList.remove("smokey");
     playingTable.classList.remove("galaxy");
-    playingTable.classList.remove("blueSmoke");
+    playingTable.classList.remove("wood");
     playingTable.classList.add("brick");
 });
 /* End of THEME Buttons ^ */
