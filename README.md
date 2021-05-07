@@ -53,6 +53,7 @@ _If using "data-*" you must make sure the descriptor (* = descriptor) is all low
 Determined that sections should be on the left and right side of the board, so created aside sections to begin a flexbox look.  
 With minimal information on the HTML (this is mostly just links and divs to provide the box needed for each flip card.), I began to layout basic CSS coding to build the container and playing table shape in the middle.  
 To learn how to make a flipcard, I followed a tutorial listed below (refer to: Make a flip-card).  This gave great advise and additional features that could be added to the cards (ie using 540deg spin instead of 180deg, for a more animated look - I used the -180deg spin).
+Once I knew how to flip a card, I had to add this into my project to flip all the available cards.
 
 
 ## Contribution Guidelines:
