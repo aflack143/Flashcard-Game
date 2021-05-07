@@ -60,7 +60,7 @@ To learn how to make a flipcard, I followed a tutorial listed below (refer to: M
 [_Locking grid to flip](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae) 
 [Same author, second link found in search.]( https://marina-ferreira.github.io/tutorials/js/memory-game/)
 
-[_Adding Audio](https://www.codegrepper.com/code-examples/javascript/how+to+play+sounds+vanilla+js)
+[_Adding Audio_](https://www.codegrepper.com/code-examples/javascript/how+to+play+sounds+vanilla+js)
 
 [_Conditional (ternary) operator_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
   condition ? expression/function if true : expression/function if false 
