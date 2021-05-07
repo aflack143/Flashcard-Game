@@ -56,6 +56,8 @@ To learn how to make a flipcard, I followed a tutorial listed below (refer to: M
 
 
 ## Contribution Guidelines:
+_Special thank you to David Lewis, Julia Christensen, and Leo Rodriguez for reviewing and helping polish my coding._
+
 ### Sources: 
 [Make a flip-card](https://www.youtube.com/watch?v=Lc6wyl1KdOc)
 
