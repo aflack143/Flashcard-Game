@@ -8,8 +8,9 @@ Within this game I will demonstrate the skills I have learned from the **General
 For this game, goal is to match all the cards, flipping over 2 cards at a time.
 
 ## Brief Example:
-Screenshot of the program in use:
-![Game screenshot](https://user-images.githubusercontent.com/80013194/117393174-2ce01d80-aeb9-11eb-94a8-6557e86ccf54.png)
+Screenshot of the program in use:  
+![screenshot of game](https://user-images.githubusercontent.com/80013194/117452734-bd464e80-af09-11eb-9caf-ad16e59f088b.png)
+
   
 ## Features:
 **_Bronze_**:
@@ -52,9 +53,12 @@ _If using "data-*" you must make sure the descriptor (* = descriptor) is all low
 Determined that sections should be on the left and right side of the board, so created aside sections to begin a flexbox look.  
 With minimal information on the HTML (this is mostly just links and divs to provide the box needed for each flip card.), I began to layout basic CSS coding to build the container and playing table shape in the middle.  
 To learn how to make a flipcard, I followed a tutorial listed below (refer to: Make a flip-card).  This gave great advise and additional features that could be added to the cards (ie using 540deg spin instead of 180deg, for a more animated look - I used the -180deg spin).
+Once I knew how to flip a card, I had to add this into my project to flip all the available cards.
 
 
 ## Contribution Guidelines:
+_Special thank you to David Lewis, Julia Christensen, and Leo Rodriguez for reviewing and helping polish my coding._
+
 ### Sources: 
 [Make a flip-card](https://www.youtube.com/watch?v=Lc6wyl1KdOc)
 
