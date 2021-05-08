@@ -1,4 +1,5 @@
 const playingTable = document.querySelector(".playingTable");
+const winnerMessage = document.querySelector("#winnerContainer");
 const eachCard = document.querySelectorAll(".flipCard");
 const pairCards = document.querySelectorAll(".matchedSet");
 let hasFlippedCard = false;
@@ -26,16 +27,18 @@ const attemptedMatches = document.querySelector("#attempts")
 const pairedMatches = document.querySelector("#matches")
 let matchAttempts = 1;
 let matchedPairs = 1;
-
+let gamesPlayed = 0;
+const totalGames = document.querySelector("#totalGames")
 const easyButton = document.querySelector("#easy");
 const mediumButton = document.querySelector("#medium");
 const hardButton = document.querySelector("#hard");
+
+let gameMode = "easy";
 
 /* Game Mode */
 
 easyButton.addEventListener("click", () => {
     for (let i=0; i<16; i++) {
-        // eachCard.forEach(indCard => {
             eachCard[i].classList.add("display");
             eachCard[i].classList.add("easy");
             eachCard[i].classList.remove("hidden");
@@ -43,17 +46,15 @@ easyButton.addEventListener("click", () => {
             eachCard[i].classList.remove("medium");
         }
     for (let i=16; i < eachCard.length; i++) {
-        // eachCard.forEach(indCard => {
             eachCard[i].classList.remove("display");
             eachCard[i].classList.add("hidden");
         }
+    gameMode = "easy";
     reset();
-    cardShuffle();
 });
 
 mediumButton.addEventListener("click", () => {
     for (let i=0; i<30; i++) {
-        // eachCard.forEach(indCard => {
             eachCard[i].classList.add("display");
             eachCard[i].classList.add("medium");
             eachCard[i].classList.remove("hidden");
@@ -61,12 +62,11 @@ mediumButton.addEventListener("click", () => {
             eachCard[i].classList.remove("easy");
         }
     for (let i=30; i < eachCard.length; i++) {
-        // eachCard.forEach(indCard => {
             eachCard[i].classList.remove("display");
             eachCard[i].classList.add("hidden");
         }
+    gameMode = "medium";
     reset();
-    cardShuffle();
 });
 
 
@@ -78,14 +78,23 @@ hardButton.addEventListener("click", () => {
         indCard.classList.remove("easy");
         indCard.classList.remove("medium");
     });
+    gameMode = "hard";
     reset();
-    cardShuffle();
 });
 
 
 newGameBtn.addEventListener("click", () => {
     reset();
-    cardShuffle();
+});
+
+const yesBtn = document.querySelector("#yes");
+const noBtn = document.querySelector("#no");
+
+yesBtn.addEventListener("click", () => {
+    reset();
+});
+noBtn.addEventListener("click", () => {
+    winnerMessage.classList.add("hidden");
 });
 
 function reset() {
@@ -96,12 +105,15 @@ function reset() {
     hasFlippedCard = false;
     firstCard, secondCard;
     lockTable = false;
+    winnerMessage.classList.add("hidden")
     eachCard.forEach(card => {
         card.classList.remove("flip");
         card.classList.add("reset");
         card.addEventListener("click", flipCard);
-        card.style.border = "none";
+        card.style.border = "inherit";
+        card.style.borderRadius = "inherit"
     });
+    cardShuffle();
 }
 
 function cardShuffle() {
@@ -109,6 +121,8 @@ function cardShuffle() {
         let cardShuffle = Math.floor(Math.random()*eachCard.length); 
         card.style.order = cardShuffle;
     });
+    gamesPlayed++;
+    return currentGamesTotal.innerHTML = gamesPlayed;
 }
 /* ^ End of Game Mode Selection ^ */
 
@@ -122,7 +136,6 @@ soundBtn.addEventListener("click", () => {
         soundBtn.innerHTML = "ON";
     }
 })
-let sportImg1 = document.querySelector("img.sports.display")
 let theme = "colors";
 
 function matchedSound() {
@@ -177,21 +190,22 @@ function flipCard() {
         return;
     }
     secondCard = this;
+    attemptedTotalMatches()
     checkforMatch();
-    }
-    
+}
+
+function attemptedTotalMatches() {
+    return attemptedMatches.innerHTML = matchAttempts++;
+}
+function pairTotalMatches() {
+    return pairedMatches.innerHTML = matchedPairs++;
+}
     
 function checkforMatch() {     
     let isMatch = firstCard.dataset.cardset === secondCard.dataset.cardset;
     isMatch ? disableCards() : unflipCards();
-    return attemptedMatches.innerHTML = matchAttempts++;
-        // if (firstCard.dataset.cardset === secondCard.dataset.cardset){
-            //     disableCards();
-            //     return;
-            // }
-            // unflipCards()
 }
-    
+
 function disableCards() {
     firstCard.style.border = "thick solid #00ff2a";
     firstCard.style.borderRadius = "15px";
@@ -199,11 +213,13 @@ function disableCards() {
     secondCard.style.borderRadius = "15px";
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
-    resetTable();
     matchedSound();
-    return pairedMatches.innerHTML = matchedPairs++;
-}
-        
+    pairTotalMatches();
+    resetTable();
+    lastFlippedCard();
+};
+
+
 function unflipCards() {
     lockTable = true;
     firstCard.style.border = "thick solid red";
@@ -225,14 +241,8 @@ function resetTable() {
     [firstCard, secondCard] = [null, null];
 }
                         
-(function shuffle() {                
-    eachCard.forEach(card => {                   
-        let cardShuffle = Math.floor(Math.random()*eachCard.length); 
-        card.style.order = cardShuffle;
-    });
-})();
-            
-
+(cardShuffle());
+          
 eachCard.forEach(card => card.addEventListener("click", (flipCard)));
 
 
@@ -242,21 +252,23 @@ dinosButton.addEventListener("click", () => {
     theme = "dinos";            
     dinosImg.forEach(dinoBack => {
         dinoBack.classList.add("display");
+        dinoBack.classList.remove("hidden");
     });
     colorsImg.forEach(colorBack => {
         colorBack.classList.add("hidden");
-        colorBack.classList.remove("display")
+        colorBack.classList.remove("display");
     });
     sportsImg.forEach(sportsBack => {
         sportsBack.classList.add("hidden");
-        sportsBack.classList.remove("display")
+        sportsBack.classList.remove("display");
     });
 });
 
 colorsButton.addEventListener("click", () => {
     theme = "colors";
     colorsImg.forEach(colorBack => {
-        colorBack.classList.add("display")
+        colorBack.classList.add("display");
+        colorBack.classList.remove("hidden");
     });
     dinosImg.forEach(dinoBack => {
         dinoBack.classList.add("hidden");
@@ -264,7 +276,7 @@ colorsButton.addEventListener("click", () => {
     });
     sportsImg.forEach(sportsBack => {
         sportsBack.classList.add("hidden");
-        sportsBack.classList.remove("display")
+        sportsBack.classList.remove("display");
     });
 });
 
@@ -272,10 +284,11 @@ sportsButton.addEventListener("click", () => {
     theme = "sports";
     sportsImg.forEach(sportsBack => {
         sportsBack.classList.add("display");
+        sportsBack.classList.remove("hidden");
     });
     colorsImg.forEach(colorBack => {
         colorBack.classList.add("hidden");
-        colorBack.classList.remove("display")
+        colorBack.classList.remove("display");
     });
     dinosImg.forEach(dinoBack => {
         dinoBack.classList.add("hidden");
@@ -324,3 +337,92 @@ brickButton.addEventListener("click", () => {
     playingTable.classList.add("brick");
 });
 /* End of THEME Buttons ^ */
+
+function endGameNow() {
+    eachCard.forEach(card => {
+        card.classList.add("flip");
+    }); 
+}
+
+
+const card1 = document.querySelector(".e1");
+const card2 = document.querySelector(".e2");
+const card3 = document.querySelector(".e3");
+const card4 = document.querySelector(".e4");
+const card5 = document.querySelector(".e5");
+const card6 = document.querySelector(".e6");
+const card7 = document.querySelector(".e7");
+const card8 = document.querySelector(".e8");
+const card9 = document.querySelector(".m9");
+const card10 = document.querySelector(".m10");
+const card11 = document.querySelector(".m11");
+const card12 = document.querySelector(".m12");
+const card13 = document.querySelector(".m13");
+const card14 = document.querySelector(".m14");
+const card15 = document.querySelector(".m15");
+const card16 = document.querySelector(".h16");
+const card17 = document.querySelector(".h17");
+const card18 = document.querySelector(".h18");
+const card19 = document.querySelector(".h19");
+const card20 = document.querySelector(".h20");
+const card21 = document.querySelector(".h21");
+const card22 = document.querySelector(".h22");
+const card23 = document.querySelector(".h23");
+const card24 = document.querySelector(".h24");
+
+
+function lastFlippedCard() { 
+    if (gameMode = "easy") {
+        if (card1.classList.contains("flip")) {
+            if (card2.classList.contains("flip")) {
+                if (card3.classList.contains("flip")) {
+                    if (card4.classList.contains("flip")) {
+                        if (card5.classList.contains("flip")) {
+                            if (card6.classList.contains("flip")) {
+                                if (card7.classList.contains("flip")) {
+                                    if (card8.classList.contains("flip")) {
+                                        return winnerMessage.classList.remove("hidden"); }}}}}}}}
+    } else if (gameMode = "medium") {
+        if (card1.classList.contains("flip")) {
+            if (card2.classList.contains("flip")) {
+                if (card3.classList.contains("flip")) {
+                    if (card4.classList.contains("flip")) {
+                        if (card5.classList.contains("flip")) {
+                            if (card6.classList.contains("flip")) {
+                                if (card7.classList.contains("flip")) {
+                                    if (card8.classList.contains("flip")) {
+                                        if (card9.classList.contains("flip")) {
+                                            if (card10.classList.contains("flip")) {
+                                                if (card11.classList.contains("flip")) {
+                                                    if (card12.classList.contains("flip")) {
+                                                        if (card13.classList.contains("flip")) {
+                                                            if (card14.classList.contains("flip")) {
+                                                                if (card15.classList.contains("flip")) {
+                                                                    return winnerMessage.classList.remove("hidden"); }}}}}}}}}}}}}}}
+    } else if (gameMode = "hard") {
+            if (card1.classList.contains("flip")) {
+                if (card2.classList.contains("flip")) {
+                    if (card3.classList.contains("flip")) {
+                        if (card4.classList.contains("flip")) {
+                            if (card5.classList.contains("flip")) {
+                                if (card6.classList.contains("flip")) {
+                                    if (card7.classList.contains("flip")) {
+                                        if (card8.classList.contains("flip")) {
+                                            if (card9.classList.contains("flip")) {
+                                                if (card10.classList.contains("flip")) {
+                                                    if (card11.classList.contains("flip")) {
+                                                        if (card12.classList.contains("flip")) {
+                                                            if (card13.classList.contains("flip")) {
+                                                                if (card14.classList.contains("flip")) {
+                                                                    if (card15.classList.contains("flip")) {
+                                                                        if (card16.classList.contains("flip")) {
+                                                                            if (card17.classList.contains("flip")) {
+                                                                                if (card18.classList.contains("flip")) {
+                                                                                    if (card19.classList.contains("flip")) {
+                                                                                        if (card20.classList.contains("flip")) {
+                                                                                            if (card21.classList.contains("flip")) {
+                                                                                                if (card22.classList.contains("flip")) {
+                                                                                                    if (card23.classList.contains("flip")) {
+                                                                                                        if (card24.classList.contains("flip")) {
+                                        return winnerMessage.classList.remove("hidden"); }}}}}}}}}}}}}}}}}}}}}}}}
+}}

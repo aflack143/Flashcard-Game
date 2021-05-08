@@ -56,7 +56,7 @@ footer div {
 .results h4 {
     margin-top: 2px;
     height: 50%;
-    border-bottom: darkolivegreen solid 2px;
+    /* border-bottom: darkolivegreen solid 2px; */
     width: 200px;
 }
 .results p {
@@ -124,7 +124,7 @@ button:hover {
     width: 80vw;
     height: 80vh;  
 }
-.playingTable {
+.playingTable, #winnerContainer {
     cursor: pointer;
     position: absolute;
     display: inline-flex;
@@ -135,11 +135,35 @@ button:hover {
     height: 80%;
     width: 80%;
     padding: 1%;
+    backface-visibility: hidden;
     background-image: url(images/green.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 8px;
+}
+#winnerContainer.hidden {
+    display: none;
+}
+
+#winnerContainer {
+    background-color: rgba(211, 169, 34, 0.472);
+    font-size: 30px;
+    background-image: none;
+    text-align: center;
+    justify-content: center;
+}
+#winnerMsg {
+    height: 50%;
+    width: 75%;
+    background-color: rgba(255, 227, 194, .75);
+    color: darkolivegreen;
+    border: black 2px solid;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .flipCard.flip {
@@ -158,8 +182,28 @@ button:hover {
     border: none;
 }
 
+#yes {
+    background-color: darkolivegreen;
+    border:black solid 2px;
+    color: bisque;
+    font-weight: bold;
+    height: 30px;
+    width: 50px;
+}
+
+#no {
+    background-color: grey;
+    border:black solid 2px;
+    color: bisque;
+    font-weight: bold;
+    height: 30px;
+    width: 50px;
+}
+
 .reset {
     transition: transform 0s;;
+    border: none;
+    border-radius: 0;
 }
 
 .easy {
@@ -181,12 +225,7 @@ button:hover {
 
 }
 
-.flipCard:hover {
-    border: bisque 5px solid;
-    border-radius: 10px;
-    position: relative;
-}
-.flip:hover {
+.flipCard.flip:hover {
     width: 21%;
     height: 21%;
     border: none;
@@ -201,6 +240,10 @@ button:hover {
     height: 11.5%;
 }
 
+.flipCard:hover, .easy:hover {
+    border: bisque 5px solid;
+    border-radius: 10px;
+}
 .backOfCard, .faceOfCard {
     position: absolute;
     width: 100%;
@@ -309,15 +352,16 @@ img.dinos, img.sports {
     display: none;
     position: absolute;
 }
-.hidden {
+.hidden, img.hidden {
     display: none;
 }
-img.display {
+
+img.display, .display {
     display: block;
 }
 
 .playingTable.wood {
-    background-image: url(images/wood2.png);
+    background-image: url(images/wood2.jpg);
 }
 
 .playingTable.smokey {
@@ -360,7 +404,7 @@ aside div{
 }
 aside p, .button, footer, .faceOfCard {
     font-size: 10px;
-    /* font-weight: thin; */
+
 }
 .button {
     font-weight: bold;
@@ -393,10 +437,17 @@ aside p, .button, footer, .faceOfCard {
 .flipCard:hover {
     border: black 3px solid
 }
-/* 
+#winnerContainer {
+    background-color: rgba(211, 169, 34, 0);
+    font-size: 12px;
+}
 
-.backOfCard img, .faceOfCard img {
-    position: 0px;
-} */
+#yes, #no {
+    border:black solid 1px;
+    font-weight: normal;
+    height: 15px;
+    width: 30px;
+    font-size: 12px;
+}
 
 }
