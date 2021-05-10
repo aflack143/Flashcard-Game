@@ -344,85 +344,14 @@ function endGameNow() {
     }); 
 }
 
-
-const card1 = document.querySelector(".e1");
-const card2 = document.querySelector(".e2");
-const card3 = document.querySelector(".e3");
-const card4 = document.querySelector(".e4");
-const card5 = document.querySelector(".e5");
-const card6 = document.querySelector(".e6");
-const card7 = document.querySelector(".e7");
-const card8 = document.querySelector(".e8");
-const card9 = document.querySelector(".m9");
-const card10 = document.querySelector(".m10");
-const card11 = document.querySelector(".m11");
-const card12 = document.querySelector(".m12");
-const card13 = document.querySelector(".m13");
-const card14 = document.querySelector(".m14");
-const card15 = document.querySelector(".m15");
-const card16 = document.querySelector(".h16");
-const card17 = document.querySelector(".h17");
-const card18 = document.querySelector(".h18");
-const card19 = document.querySelector(".h19");
-const card20 = document.querySelector(".h20");
-const card21 = document.querySelector(".h21");
-const card22 = document.querySelector(".h22");
-const card23 = document.querySelector(".h23");
-const card24 = document.querySelector(".h24");
-
-
 function lastFlippedCard() { 
-    if (gameMode = "easy") {
-        if (card1.classList.contains("flip")) {
-            if (card2.classList.contains("flip")) {
-                if (card3.classList.contains("flip")) {
-                    if (card4.classList.contains("flip")) {
-                        if (card5.classList.contains("flip")) {
-                            if (card6.classList.contains("flip")) {
-                                if (card7.classList.contains("flip")) {
-                                    if (card8.classList.contains("flip")) {
-                                        return winnerMessage.classList.remove("hidden"); }}}}}}}}
-    } else if (gameMode = "medium") {
-        if (card1.classList.contains("flip")) {
-            if (card2.classList.contains("flip")) {
-                if (card3.classList.contains("flip")) {
-                    if (card4.classList.contains("flip")) {
-                        if (card5.classList.contains("flip")) {
-                            if (card6.classList.contains("flip")) {
-                                if (card7.classList.contains("flip")) {
-                                    if (card8.classList.contains("flip")) {
-                                        if (card9.classList.contains("flip")) {
-                                            if (card10.classList.contains("flip")) {
-                                                if (card11.classList.contains("flip")) {
-                                                    if (card12.classList.contains("flip")) {
-                                                        if (card13.classList.contains("flip")) {
-                                                            if (card14.classList.contains("flip")) {
-                                                                if (card15.classList.contains("flip")) {
-                                                                    return winnerMessage.classList.remove("hidden"); }}}}}}}}}}}}}}}
-    } else if (gameMode = "hard") {
-            if (card1.classList.contains("flip")) {
-                if (card2.classList.contains("flip")) {
-                    if (card3.classList.contains("flip")) {
-                        if (card4.classList.contains("flip")) {
-                            if (card5.classList.contains("flip")) {
-                                if (card6.classList.contains("flip")) {
-                                    if (card7.classList.contains("flip")) {
-                                        if (card8.classList.contains("flip")) {
-                                            if (card9.classList.contains("flip")) {
-                                                if (card10.classList.contains("flip")) {
-                                                    if (card11.classList.contains("flip")) {
-                                                        if (card12.classList.contains("flip")) {
-                                                            if (card13.classList.contains("flip")) {
-                                                                if (card14.classList.contains("flip")) {
-                                                                    if (card15.classList.contains("flip")) {
-                                                                        if (card16.classList.contains("flip")) {
-                                                                            if (card17.classList.contains("flip")) {
-                                                                                if (card18.classList.contains("flip")) {
-                                                                                    if (card19.classList.contains("flip")) {
-                                                                                        if (card20.classList.contains("flip")) {
-                                                                                            if (card21.classList.contains("flip")) {
-                                                                                                if (card22.classList.contains("flip")) {
-                                                                                                    if (card23.classList.contains("flip")) {
-                                                                                                        if (card24.classList.contains("flip")) {
-                                        return winnerMessage.classList.remove("hidden"); }}}}}}}}}}}}}}}}}}}}}}}}
+    if (gameMode === "easy") {
+        if (pairedMatches.innerHTML === "8") {
+            return winnerMessage.classList.remove("hidden"); }
+    } else if (gameMode === "medium") {
+        if (pairedMatches.innerHTML === "15") {
+            return winnerMessage.classList.remove("hidden"); }
+    } else if (gameMode === "hard") {
+        if (pairedMatches.innerHTML === "24") {
+            return winnerMessage.classList.remove("hidden"); }
 }}
